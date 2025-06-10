@@ -1,0 +1,53 @@
+{
+  "name": "Feature Branch",
+  "description": "A branch for developing new features",
+  "type": "branch",
+  "properties": {
+    "branchType": "feature",
+    "defaultBranch": false,
+    "mergeStrategy": "squash",
+    "requiredStatusChecks": [
+      "build",
+      "test"
+    ],
+    "protectionRules": {
+      "requireCodeOwnerReviews": true,
+      "dismissStaleReviews": true,
+      "enforceAdmins": true,
+      "requiredPullRequestReviews": {
+        "requiredApprovingReviewCount": 1
+      },
+      "restrictions": {
+        "users": [
+          "developer1",
+          "developer2"
+        ],
+        "teams": [
+          "feature-team"
+        ]
+      },
+      "requiredLinearHistory": true,
+      "allowForcePushes": false,
+      "allowDeletions": false,
+      "requiredSignatures": true,
+      "requiredConversationResolution": true,
+      "requiredCommitSignatures": true,
+      "requiredStatusChecksContexts": [
+        "ci/circleci",
+        "ci/travis"
+      ],
+      "requiredPullRequestTitlePattern": "^(feat|fix|docs|style|refactor|perf|test|chore): .+",
+      "requiredPullRequestBodyPattern": "^(?!\\s*$).+",
+      "requiredPullRequestLabels": [
+        "feature",
+        "in-progress"
+      ],
+      "requiredPullRequestAssignees": [
+        "developer1"
+      ],
+      "requiredPullRequestReviewers": [
+        "developer2"
+      ]
+    }
+  }
+}
